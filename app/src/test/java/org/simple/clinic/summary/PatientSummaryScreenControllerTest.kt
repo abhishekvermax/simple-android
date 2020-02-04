@@ -100,6 +100,10 @@ class PatientSummaryScreenControllerTest {
           override fun showScheduleAppointmentSheet(patientUuid: UUID) {
             ui.showScheduleAppointmentSheet(patientUuid)
           }
+
+          override fun goToPreviousScreen() {
+            ui.goToPreviousScreen()
+          }
         }
     )
 
