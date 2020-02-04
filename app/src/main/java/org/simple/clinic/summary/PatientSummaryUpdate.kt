@@ -14,6 +14,7 @@ class PatientSummaryUpdate : Update<PatientSummaryModel, PatientSummaryEvent, Pa
       is PatientSummaryBackClicked -> dispatch(HandleBackClick(event.patientUuid, event.screenCreatedTimestamp))
       is PatientSummaryDoneClicked -> dispatch(HandleDoneClick(event.patientUuid))
       is CurrentFacilityLoaded -> next(model.currentFacilityLoaded(event.facility))
+      else -> noChange()
     }
   }
 }
