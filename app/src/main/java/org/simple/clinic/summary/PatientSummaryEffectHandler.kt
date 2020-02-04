@@ -43,6 +43,7 @@ class PatientSummaryEffectHandler @AssistedInject constructor(
             uiWorkScheduler = schedulersProvider.ui()
         ))
         .addTransformer(LoadCurrentFacility::class.java, loadCurrentFacility(schedulersProvider.io()))
+        .addAction(HandleLinkIdCancelled::class.java, { uiActions.goToPreviousScreen() }, schedulersProvider.ui())
         .build()
   }
 
