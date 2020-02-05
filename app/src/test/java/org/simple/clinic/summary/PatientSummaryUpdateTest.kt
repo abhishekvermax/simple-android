@@ -7,6 +7,7 @@ import com.spotify.mobius.test.UpdateSpec.assertThatNext
 import org.junit.Test
 import org.simple.clinic.facility.FacilityConfig
 import org.simple.clinic.patient.PatientMocker
+import org.simple.clinic.summary.OpenIntention.ViewExistingPatient
 import java.util.UUID
 
 class PatientSummaryUpdateTest {
@@ -18,7 +19,7 @@ class PatientSummaryUpdateTest {
         facilityConfig = FacilityConfig(diabetesManagementEnabled = true)
     )
 
-    val model = PatientSummaryModel.from(UUID.fromString("93a131b0-890e-41a3-88ec-b35b48efc6c5"))
+    val model = PatientSummaryModel.from(ViewExistingPatient, UUID.fromString("93a131b0-890e-41a3-88ec-b35b48efc6c5"))
 
     val updateSpec = UpdateSpec(PatientSummaryUpdate())
 
