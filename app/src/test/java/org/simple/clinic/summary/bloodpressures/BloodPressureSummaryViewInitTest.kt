@@ -20,7 +20,11 @@ class BloodPressureSummaryViewInitTest {
         .then(
             assertThatFirst(
                 hasModel(defaultModel),
-                hasEffects(LoadBloodPressures(patientUuid, config.numberOfBpsToDisplay), LoadBloodPressuresCount(patientUuid))
+                hasEffects(
+                    LoadBloodPressures(patientUuid, config.numberOfBpsToDisplay),
+                    LoadBloodPressuresCount(patientUuid),
+                    LoadCurrentFacility
+                )
             )
         )
   }
